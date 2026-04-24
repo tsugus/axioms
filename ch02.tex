@@ -1,0 +1,472 @@
+\chapter{定理}
+
+% 定義 6
+
+\begin{dfn}[\textbf{直線上}\index{ちょくせんじょう@直線上}]
+  点 \(x\) は直線 \(ab\) 上にある、を
+  \[\exists\lambda\{x-a=\lambda(b-a)\}\]
+  と定義する。
+
+  点 \(x\) が直線 \(yz\) 上にあることを、\(y,x,z\) は\textbf{一直線上}\index{いっちょくせんじょう@一直線上}にある、ともいう。また、このことを、直線 \(yz\) は点 \(x\) を\textbf{通る}\index{とおる@通る}、ともいう。
+\end{dfn}
+
+% 定義 7
+
+\begin{dfn}[\textbf{半直線上}\index{はんちょくせんじょう@半直線上}]
+  点 \(x\) は半直線 \(ab\) 上にある、を
+  \[\exists\lambda\{x-a=\lambda(b-a)\land\lambda\geq 0\}\]
+  と定義する。
+\end{dfn}
+
+% 定義 8
+
+\begin{dfn}[\textbf{半直線の延長上}\index{はんちょくせんのえんちょうじょう@半直線の延長上}]
+  点 \(x\) は半直線 \(ab\) の延長上にある、を
+  \[\exists\lambda\{x-a=\lambda(b-a)\land\lambda<0\}\]
+  と定義する。
+\end{dfn}
+
+% 定義 9
+
+\begin{dfn}[\textbf{線分上}\index{せんぶんじょう@線分上}]
+  点 \(x\) は線分 \(ab\) 上にある、を
+  \[\exists\lambda\{x-a=\lambda(b-a)\land0\leq\lambda\leq 1\}\]
+  と定義する。
+\end{dfn}
+
+% 定義 10
+
+\begin{dfn}[\textbf{交わる}\index{まじわる@交わる}・\textbf{交点}\index{こうてん@交点}]
+  点 \(x\) が直線 \(ab\) 上にあり、直線 \(cd\) 上にもあるとき、直線 \(ab\) と直線 \(cd\) は交わるといい、\(x\) を直線 \(ab\) と直線 \(cd\) の交点という。
+
+  直線、半直線、線分と直線、半直線、線分の組み合わせにおける他の場合も同様である。
+\end{dfn}
+
+% 定義 11
+
+\begin{dfn}[\textbf{直線図形の合同}\index{ちょくせんずけいのごうどう@直線図形の合同}]
+  任意の点について、それが直線 \(ab\) 上にあることと、直線 \(cd\) 上にあることが同値なとき、直線 \(ab\) と直線 \(cd\) は合同であるという。
+
+  半直線や線分の場合も同様である。
+
+  この合同を等しいなどとも言い表す。
+\end{dfn}
+
+\begin{col*}
+  直線・半直線・線分の合同は、同値関係の性質を引き継ぐので、明らかに同一律・反射律・推移律が成り立つ。
+
+  また、「点 \(z\) は直線 \(xy\) 上にある」かつ「直線 \(xy\) と直線 \(uv\) は合同」ならば、「点 \(z\) は直線 \(uv\) 上にある」。
+\end{col*}
+
+% 定義 12
+
+\begin{dfn}[\textbf{関数 \(d\)}\index{かんすうでー@関数 \(d\)}・\textbf{長さ}\index{ながさ@長さ}]
+  ベクトルとは限らない任意の \(x,y\) に対して、関数 \(d\) を
+  \[d(x,y)=||y-x||\]
+  と定義する。
+
+  \(x,y\) が点であるとき、\(d(x,y)\) を線分 \(xy\) の長さともいい、
+  \[\overline{xy}\]
+  と表す。
+\end{dfn}
+
+% 定義 13
+
+\begin{dfn}[\textbf{半平面上}\index{はんへいめん@半平面}・\textbf{へり}\index{へり@へり}・\textbf{同じ側}\index{おなじがわ@同じ側}]
+  点 \(a,b,c\) が一直線上にないとき、点 \(x\) は半平面 \(cab\) の上にある、を
+  \[\exists\lambda\mu\{x-a=\lambda(b-a)+\mu(c-a)\land\mu\geq 0\}\]
+  と定義する。
+  点 \(x\) は直線 \(ab\) をへりとし点 \(c\) を含む半平面上にある、ともいう。
+
+  また、このとき \(\mu\neq 0\) ならば、点 \(x\) と点 \(c\) は直線 \(ab\) に関して同じ側にある、という。
+\end{dfn}
+
+% 定義 14
+
+\begin{dfn}[\textbf{共役な半平面上}\index{きょうやくなはんへいめん@共役な半平面上}・\textbf{へり}・\textbf{反対側}\index{はんたいがわ@反対側}]\label{260502235601}
+  点 \(a,b,c\) が一直線上にないとき、点 \(x\) は共役な半平面 \(cab\) の上にある、を
+  \[\exists\lambda\mu\{x-a=\lambda(b-a)+\mu(c-a)\land\mu\leq 0\}\]
+  と定義する。
+  点 \(x\) は直線 \(ab\) をへりとし点 \(c\) を含む共役な半平面上にある、ともいう。
+
+  また、このとき \(\mu\neq 0\) ならば、点 \(x\) と点 \(c\) は直線 \(ab\) に関して反対側にある、という。
+\end{dfn}
+
+% 定理 8
+
+\begin{thm}\label{360424013601}
+  与えられた点と同じ側にある点とを結ぶ線分は与えられた直線と両端以外で交わらない。
+\end{thm}
+
+\begin{proof}
+  点 \(p\) が半平面 \(cab\) 上にあって、直線 \(ab\) 上にないとする。
+
+  半平面の定義より
+  \[p-a=\lambda(b-a)+\mu(c-a),\quad \mu>0.\]
+
+  さて、線分 \(cp\) 上の両端以外の任意の点 \(x\) について、
+  \[x-c=\nu(p-c),\quad 0<\nu<1.\]
+  また
+  \[a=\nu a+(1-\nu)a\]
+  であるから、
+  \begin{align*}
+    x-a &=\nu(p-a)+(1-\nu)(c-a) \\
+        &=\nu\{\lambda(b-a)+\mu(c-a)\}+(1-\nu)(c-a) \\
+        &=\lambda\nu(b-a)+(\mu\nu+1-\nu)(c-a).
+  \end{align*}
+
+  \(\mu\nu+1-\nu>0\) なので、点 \(x\) は直線 \(ab\) 上にない。
+\end{proof}
+
+% 定理 9
+
+\begin{thm}\label{260424012501}
+  与えられた点と反対側にある点とを結ぶ線分は与えられた直線と両端以外で交わる。
+\end{thm}
+
+\begin{proof}
+  点 \(p\) が半平面 \(cab\) 上にあって、直線 \(ab\) 上にないとする。
+
+  半平面の定義より
+  \[p-a=\lambda(b-a)+\mu(c-a),\quad \mu<0.\]
+
+  さて、線分 \(cp\) 上の両端以外の任意の点 \(x\) について、
+  \[x-c=\nu(p-c),\quad 0<\nu<1.\]
+  また
+  \[a=\nu a+(1-\nu)a\]
+  であるから、
+  \begin{align*}
+    x-a &=\nu(p-a)+(1-\nu)(c-a) \\
+        &=\nu\{\lambda(b-a)+\mu(c-a)\}+(1-\nu)(c-a) \\
+        &=\lambda\nu(b-a)+(\mu\nu+1-\nu)(c-a).
+  \end{align*}
+
+  \(\mu\nu+1-\nu=0\) ならば、点 \(x\) は直線 \(ab\) 上にある。
+  \[\nu=\frac{-1}{\mu-1}\]
+  であるが、\(\mu<0\) より \(0<\nu<1\) となるので、正当である。
+\end{proof}
+
+% 補題 2
+
+\begin{lmm}\label{260502235101}
+  点 \(d\) が半平面 \(cab\) 上にないとき、半平面 \(cab\) は共役な半平面 \(dab\) と合同（定義は直線図形のそれと同様）である。
+\end{lmm}
+
+\begin{proof}
+  「\(x\) は共役な半平面 \(dab\) 上にある」が「\(x\) は半平面 \(cab\) 上にある」と同値であることを言えばよい。
+
+  \(d\) の満たすべき条件は
+  \[d-a=\alpha(b-a)+\beta(c-a),\quad \beta<0\]
+  である。
+  ゆえに、\(x\) が共役な半平面 \(dab\) 上にあるということは、\(\mu\leq 0\) として
+  \begin{align*}
+    x-a &=\lambda(b-a)+\mu(d-a) \\
+        &=\lambda(b-a)+\mu(\alpha(b-a)+\beta(c-a)) \\
+        &=(\lambda+\alpha\mu)(b-a)+\beta\mu(c-a)
+  \end{align*}
+  と表される。
+  \(\lambda+\alpha\mu\) の値は \(\mu\) を固定したとしてもあらゆるスカラーを渡る。
+  \(\beta\mu\) の値は \(\beta<0\) だからあらゆる非負のスカラーを渡る。
+
+  ゆえに、この等式は \(\lambda',\mu'\) を任意のスカラーとして、
+  \[x-a=\lambda'(b-a)+\mu'(c-a),\quad \mu'\geq 0\]
+  と表されるが、これは \(x\) が半平面 \(cab\) 上にあることの定義にほかならない。
+\end{proof}
+
+% 定理 10
+
+\begin{thm}[\textbf{Pasch の公理}\index{ぱっしゅのこうり@Pasch の公理}]
+  三角形の一辺と交わって両端の頂点を通らない直線は、その辺に対する頂点を通るか、残りのどちらか一方の辺と交わる。
+\end{thm}
+
+\begin{proof}
+  三角形 \(abc\) において直線 \(de\) が辺 \(bc\) と点 \(d\) で交わり、\(d\neq b,\ d\neq c\) とする。
+
+  定理 \ref{360424013601} の対偶より、\(b\) と \(c\) は直線 \(de\) の互いに反対側にある。
+  そして、定理 \ref{260424194701} と、半平面および共役な半平面との定義より、頂点 \(a\) は、直線 \(de\) 上にあるか、さもなければ \(de\) をへりとする二つの半平面のどちらか一方の上にのみある。
+  すなわち、半平面 \(bde\) か共役な半平面 \(bde\) である。
+
+  ところが \(c\) は直線 \(de\) に関して \(b\) の反対側にあるのだから、「反対側にある」の定義（\ref{260502235601}）より、共役な半平面 \(bde\) 上にあるのであり、かつ \(c\) は直線 \(de\) 上にないので、これは \(c\) が半平面 \(bde\) 上にないことを意味する。
+  すなわち、補題 \ref{260502235101} より半平面 \(bde\) は共役な半平面 \(cde\) と合同である。
+
+  \(a\) が共役な半平面 \(bde\) 上の点なら、\(a\) と \(b\) は互いに反対側にある。
+  ゆえに定理 \ref{260424012501}より、直線 \(de\) は線分 \(ab\) と交わる。
+
+  \(a\) が共役な半平面 \(cde\) 上の点なら、\(a\) と \(c\) は互いに反対側にある。
+  ゆえに定理 \ref{260424012501}より、直線 \(de\) は線分 \(ac\) と交わる。
+\end{proof}
+
+% 定義 15
+
+\begin{dfn}[\textbf{正射影}\index{せいしゃえい@正射影}]
+  任意の点 \(x\neq\langle0,0\rangle\) に対して、
+  \[\frac{x\cdot y}{||x||^2}x\]
+  を \(x\) の上への \(y\) の正射影という。
+\end{dfn}
+
+% 定理 11
+
+\begin{thm}\label{260427130101}
+  \(x\) の上への \(y\) の正射影を \(y_0\) とするとき、
+  \[x\cdot(y-y_0)=0\]
+\end{thm}
+
+\begin{proof}
+  \begin{align*}
+    x\cdot(y-y_0) &=x\cdot(y-\frac{x\cdot y}{||x||^2}x)=x\cdot y-x\cdot\frac{x\cdot y}{||x||^2}x \\
+                  &=x\cdot y-\frac{x\cdot y}{||x||^2}(x\cdot x)=x\cdot y-\frac{x\cdot y}{||x||^2}||x||^2 \\
+                  &=x\cdot y-x\cdot y=0.
+  \end{align*}
+\end{proof}
+
+% 定義 16
+
+\begin{dfn}[\textbf{ベクトルの垂直}\index{すいちょく@垂直（ベクトルの）}]
+  ベクトル \(x,y\) について \(x\cdot y=0\) であることを、\(x\) と \(y\) は垂直である、\(x\) は \(y\) に垂直である、などという。
+\end{dfn}
+
+% 定義 17
+
+\begin{dfn}[\textbf{ベクトルの平行}\index{へいこう@平行（ベクトルの）}]
+  ベクトル \(x,y\neq\langle0,0\rangle\) に対し、スカラー \(\lambda\) が存在して \(x=\lambda y\) となることを、\(x\) と \(y\) は平行である、\(x\) は \(y\) に平行である、などという。
+\end{dfn}
+
+% 定義 18
+
+\begin{dfn}[\textbf{三角形の合同}\index{さんかくけいのごうどう@三角形の合同}]
+  任意の三角形 \(xyz\) と \(uvw\) について、
+  \begin{align*}
+    & \overline{yz}=\overline{vw}, && \overline{zx}=\overline{wu}, && \overline{xy}=\overline{uv}, \\
+    & \angle zxy\equiv\angle wuv, && \angle xyz\equiv\angle uvw, && \angle yzx\equiv\angle vwu
+  \end{align*}
+  であることを、三角形 \(xyz\) と三角形 \(uvw\) は合同である、といい、
+  \[\triangle xyz\equiv\triangle uvw\]
+  と書く。
+\end{dfn}
+
+\begin{col*}
+  この体系においては、三角形の角の合同は頂点に対する辺（すなわち線分）の合同を意味するので、この定義は実質的に辺の合同のみで成立する。
+\end{col*}
+
+% 補題 3
+
+\begin{lmm}\label{260424041701}
+  \[x\cdot y=0\rightarrow||x-y||^2=||x||^2+||y||^2.\]
+\end{lmm}
+
+\begin{proof}
+  \(||x-y||^2\) を展開すれば明らか。
+\end{proof}
+
+% 補題 4
+
+\begin{lmm}\label{260424041702}
+  半直線 \(ab\) と線分 \(cd\) が与えられたとき、半直線 \(ab\) 上に点 \(x\) が存在して
+  \[\overline{ax}=\overline{cd}.\]
+\end{lmm}
+
+\begin{proof}
+  半直線 \(ab\) 上の点 \(x\) を表す式 \(x-a=\lambda(b-a)\) において \(\displaystyle \lambda=\frac{\overline{cd}}{||b-a||}\) とおくと、
+  \[||x-a||=\frac{\overline{cd}}{||b-a||}||b-a||=\overline{cd}.\]
+\end{proof}
+
+% 補題 5
+
+\begin{lmm}\label{260424041703}
+  どのような直線とその上にあるどの点に対しても、その点から出る垂直なベクトルがある。
+\end{lmm}
+
+\begin{proof}
+  まず、どのようなベクトルにもそれに垂直なベクトルがあることを示す。
+
+  \(x=\langle\alpha,\beta\rangle\) であるとすると、\(y=\langle\beta,-\alpha\rangle\) とおけば明らかに \(x\cdot y=x\cdot(-y)=0\) である。
+
+  ゆえに、直線のベクトルに垂直なベクトル \(n\) を選び、与えられた点 \(a\) に対して、\(b=n+a\) としてベクトル \(b\) を求めれば、それが求めるべきものである。
+\end{proof}
+
+% 準公理 1
+
+\begin{semi}[\textbf{三角形の移動の公理}]
+  半直線とその上にも延長上にもない点および三角形が与えられたとき、
+  半直線の上に点をとり、さらに、半直線とその延長をへりとする半平面のうち、与えられた点を含む側の上に点をとり、与えられた三角形と合同な三角形を作ることができる。
+\end{semi}
+
+\begin{proof}
+  与えられた三点を \(a,b,c\) とし、三角形 \(xyz\) が与えられているとする。
+
+  \(\overrightarrow{yz}\) の上への \(\overrightarrow{yx}\) の正射影を \(\overrightarrow{yx}_0\) とすると、定理 \ref{260427130101} より
+  \[\overrightarrow{yz}\cdot\overrightarrow{x_0x}=\overrightarrow{yz}\cdot(\overrightarrow{yx}-\overrightarrow{yx}_0)=0.\]
+
+  補題 \ref{260424041701}より
+  \[||\overrightarrow{x_0y}||^2+||\overrightarrow{x_0x}||^2=||\overrightarrow{x_0y}-\overrightarrow{x_0x}||^2=||\overrightarrow{xy}||^2.\]
+
+  同様に
+  \[||\overrightarrow{x_0z}||^2+||\overrightarrow{x_0x}||^2=||\overrightarrow{x_0z}-\overrightarrow{x_0x}||^2=||\overrightarrow{xz}||^2.\]
+
+  さて、補題 \ref{260424041702} により、半直線 \(bc\) 上に \(ba_0=yx_0\) となる点 \(a_0\) と、\(bc'=yz\) となる点 \(c'\) をとり、補題 \ref{260424041703} により、\(a_0\) から出る垂直なベクトルを立てる。
+  そして、そのベクトルによって定まる直線上の点として \(a_0a'=x_0x\) となる点 \(a'\) を、ただし直線 \(bc\) に関して点 \(a\) と同じ側にあるようにとれば、
+  \[||\overrightarrow{a_0b}||^2+||\overrightarrow{a_0a'}||^2=||\overrightarrow{a_0b}-\overrightarrow{a_0a'}||^2=||\overrightarrow{a'b}||^2.\]
+  \[||\overrightarrow{a_0c'}||^2+||\overrightarrow{a_0a'}||^2=||\overrightarrow{a_0c'}-\overrightarrow{a_0a'}||^2=||\overrightarrow{a'c'}||^2.\]
+  ゆえに
+  \[a'b=xy,\quad a'c'=xz.\]
+  \(bc'=yz\) は既出である。
+\end{proof}
+
+% 補題 6
+
+\begin{lmm}\label{260424111401}
+  異なる二点 \(x,y\) が共に直線 \(ab\) 上にあるならば、直線 \(xy\) と直線 \(ab\) は合同である。
+\end{lmm}
+
+\begin{proof}
+  条件より
+  \[x-a=\lambda_1(b-a),\quad y-a=\lambda_2(b-a).\]
+  ゆえに
+  \[y-x=(\lambda_2-\lambda_1)(b-a).\]
+
+  ここで、
+  \[z-x=\lambda(y-x)\]
+  とするならば、
+  \[z-x=\lambda(\lambda_2-\lambda_1)(b-a)\]
+  となるので、最初の等式より
+  \[z-a=\{\lambda(\lambda_2-\lambda_1)+\lambda_1\}(b-a).\]
+
+  逆に、
+  \[z-a=\lambda'(b-a)\]
+  とする。
+  \(x,y\) が異なる二点であることより \(\lambda_1\neq\lambda_2\) である。
+  ゆえに、
+  \[\lambda'=\lambda(\lambda_2-\lambda_1)+\lambda_1\]
+  となる \(\lambda\) は必ず存在するので、先ほどの推論を逆向きにたどれば
+  \[z-x=\lambda(y-x).\]
+\end{proof}
+
+% 準公理 2
+
+\begin{semi}[\textbf{直線の唯一存在の公理}]
+  異なる二点を通る直線はただ一つある。
+\end{semi}
+
+\begin{proof}
+  まず、高々一つであることを示す。
+
+  異なる二点 \(a,b\) を通る直線は、それがどのような直線、例えば直線 \(xy\) であれ、\(a,b\) が直線 \(xy\) 上にあれば補題 \ref{260424111401} により直線 \(ab\) と直線 \(xy\) は合同である。
+
+  すなわち、直線の合同が推移律を満たすことより、異なる二点 \(a,b\) を通る直線はすべて合同である。
+
+  直線が存在することに関しては、この体系において直線は対象物でないので問題を正面から扱うことができないが、「その直線上の点が存在する」と解すれば、直線は二点で規定され、少なくともその二点を通るのだから、自明である。
+\end{proof}
+
+% 定理 12
+
+\begin{thm}[\textbf{Schwarz の不等式}\index{しゅわるつのふとうしき@Schwarz の不等式}]\label{260424234101}
+  \[|x\cdot y|\leq||x||||y||.\]
+\end{thm}
+
+\begin{proof}
+  \(x=\langle0,0\rangle\) ならば明らかなので、\(x\neq\langle0,0\rangle\) とする。
+  内積の性質より、
+  \[(\lambda x+y)\cdot(\lambda x+y)\geq 0.\]
+  左辺を展開すると、
+  \[(x\cdot x)\lambda^2+2(x\cdot y)\lambda+(y\cdot y)\geq 0.\]
+  \(x\neq\langle0,0\rangle\) より \(x\cdot x>0\) であるから、左辺を平方完成すると
+  \[(x\cdot x)\left(\lambda+\frac{x\cdot y}{x\cdot x}\right)^2-\frac{(x\cdot y)^2-(x\cdot x)(y\cdot y)}{x\cdot x}\geq 0.\]
+  ゆえに、左辺は \(\displaystyle \lambda=-\frac{x\cdot y}{x\cdot x}\) のとき最小値をとり、それが \(\geq 0\) でなければならない。
+  よって
+  \[(x\cdot y)^2\leq(x\cdot x)(y\cdot y).\]
+  ゆえに
+  \[|x\cdot x|\leq||x||||y||.\]
+\end{proof}
+
+% 補題 7
+
+\begin{lmm}\label{260424225402}
+  \[||x+y||\leq||x||+||y||.\]
+\end{lmm}
+
+\begin{proof}
+  左辺を展開して定理 \ref{260424234101} を用いれば示せる。
+\end{proof}
+
+% 補題 8
+
+\begin{lmm}\label{260424225401}
+  \(x\neq y,\ z\neq y\) である任意の三点について、
+  \[\overline{yx}+\overline{yz}=\overline{xz}\rightarrow\exists\lambda(\overrightarrow{yz}=-\lambda\overrightarrow{yx}\land\lambda>0).\]
+\end{lmm}
+
+\begin{proof}
+  \(\overline{yx}+\overline{yz}=\overline{xz}\) より、
+  \[||\overrightarrow{yx}||+||\overrightarrow{yz}||=||\overrightarrow{yz}-\overrightarrow{yx}||.\]
+
+  両辺を自乗して整理すると、
+  \(||\overrightarrow{yx}||||\overrightarrow{yz}||=-\overrightarrow{yx}\cdot\overrightarrow{yz}.\)
+
+  さて、\(||\overrightarrow{yz}+\lambda\overrightarrow{yx}||=0\) とおくと、
+
+  \begin{align*}
+    0 &=||\overrightarrow{yz}+\lambda\overrightarrow{yx}||^2=(\overrightarrow{yz}+\lambda\overrightarrow{yx})\cdot(\overrightarrow{yz}+\lambda\overrightarrow{yx}) \\
+      &=(\overrightarrow{yx}\cdot\overrightarrow{yx})\lambda^2+2(\overrightarrow{yx}\cdot\overrightarrow{yz})\lambda+\overrightarrow{yz}\cdot\overrightarrow{yz} \\
+      &=||\overrightarrow{yx}||^2\lambda^2-2||\overrightarrow{yx}||||\overrightarrow{yz}||\lambda+||\overrightarrow{yz}||^2 \\
+      &=(||\overrightarrow{yx}||\lambda-||\overrightarrow{yz}||)^2.
+  \end{align*}
+
+  ゆえに、\(\displaystyle \lambda=\frac{||\overrightarrow{yz}||}{||\overrightarrow{yx}||}\,(>0)\) について \(\overrightarrow{yz}+\lambda\overrightarrow{yx}=\langle0,0\rangle.\)
+\end{proof}
+
+% 準公理 3
+
+\begin{semi}[\textbf{線分の最短性の公理}]
+  三角形の二辺の長さの和は残り一辺の長さよりも大きい。
+\end{semi}
+
+\begin{proof}
+  三角形の頂点を \(a,b,c\) とすると、補題 \ref{260424225402} より
+  \[||\overrightarrow{ac}||=||\overrightarrow{ab}+\overrightarrow{bc}||\leq||\overrightarrow{ab}||+||\overrightarrow{bc}||.\]
+
+  補題 \ref{260424225401} より、\(\overline{ab}+\overline{bc}=\overline{ac}\) は成り立たない。
+\end{proof}
+
+% 補題 9
+
+\begin{lmm}\label{260424203201}
+  異なる二つの直線のベクトルが平行でないならば、それらは交わる。
+\end{lmm}
+
+\begin{proof}
+  ベクトル \(\overrightarrow{ab},\overrightarrow{cd}\) が平行でないとし、\(\overrightarrow{ae}=\overrightarrow{cd}\) となる点 \(e\) をとる。
+
+  \(\overrightarrow{ab}\) と \(\overrightarrow{ac}\) が平行であるとすると、点 \(c\) は直線 \(ab\) 上の点であり、二つの直線は \(c\) で交わることになって、証明は終わりである。
+  ゆえに、平行ではないとする。
+
+  このとき、定理 \ref{260424194701} より \(\overrightarrow{ae}=\lambda\overrightarrow{ab}+\mu\overrightarrow{ac}\) となるスカラー \(\lambda,\mu\) がある。
+
+  さて、ここで \(\mu=0\) とすると、\(\overrightarrow{cd}=\overrightarrow{ae}=\lambda\overrightarrow{ab}\) より、\(\overrightarrow{cd}\) と \(\overrightarrow{ab}\) が平行になってしまうので、\(\mu\neq 0.\)
+
+  ゆえに、\(\displaystyle \overrightarrow{af}=-\frac{\lambda}{\mu}\overrightarrow{ab}\) とおくことができ、
+  \begin{align*}
+    \overrightarrow{cf} &=\overrightarrow{af}-\overrightarrow{ac}=-\frac{\lambda}{\mu}\overrightarrow{ab}-\overrightarrow{ac} \\
+                        &=-\frac{1}{\mu}(\lambda\overrightarrow{ab}+\mu\overrightarrow{ac}) \\
+                        &=-\frac{1}{\mu}\overrightarrow{ae}=-\frac{1}{\mu}\overrightarrow{cd}.
+  \end{align*}
+  これは、直線 \(ab\) 上の点として定義した点 \(f\) が直線 \(cd\) 上にもあることを示している。
+\end{proof}
+
+% 準公理 4
+
+\begin{semi}[\textbf{平行線の唯一性の公理}]
+  直線外の一点を通ってその直線に決して交わらない直線は高々一つ。
+\end{semi}
+
+\begin{proof}
+  その直線外の一点が合同でない二つの直線上にあったとしよう。
+  補題 \ref{260424203201} より、それら二つの直線のそれぞれのベクトルは与えられた直線のベクトルと平行である。
+  与えられた点を \(a\) とすれば、
+  \[\overrightarrow{ab}=\lambda_1\overrightarrow{xy},\quad \overrightarrow{ac}=\lambda_2\overrightarrow{xy}.\]
+
+  ゆえに
+  \[\lambda_2\overrightarrow{ab}=\lambda_1\overrightarrow{ac}.\]
+  ところが、この等式を用いると一方の直線上の点が必ず他方の直線上にもあることが分かるので、合同でない二つの直線という前提に反する。
+\end{proof}
+
+これで準公理が出揃ったので、図を見れば明らかなことについてはいちいち証明せず、準公理のみを用いる方針で行くことができる。

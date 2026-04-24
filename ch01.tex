@@ -1,0 +1,286 @@
+\chapter{平面幾何学の一階述語理論}
+
+
+\section{無定義用語}
+
+\begin{description}
+  \item[定項] \(0,\) \(1\)
+  \item[原始関数] \(+,\) \(\cdot\)
+  \item[原始述語] \(S,\) \(>,\) \(V\)
+\end{description}
+
+\(S(x)\) の直感的な意味は、「\(x\) は\textbf{スカラー}\index{すからー@スカラー}である」である。
+
+
+\section{公理}
+
+これは実質的に\textbf{実閉体}\index{じつへいたい@実閉体}の公理系である。
+実数の公理系でも構わない。
+実閉体のものにしてあるのは、一階述語論理において理論の完全性が得られるからである。
+
+\(\exists!x(P(x))\) は \(\exists x(P(x)\land\forall y(P(y)\rightarrow x=y))\) の省略記法であり、「ただ一つの \(x\) に対して \(P(x)\) である」を意味する。
+また、以下において \(\forall\) は極力省略してある。
+
+\begin{enumerate}
+  \item \(S(0)\land S(1)\)
+  \item \(S(x)\land S(y)\leftrightarrow S(x+y)\)
+  \item \(S(x)\land S(y)\rightarrow\exists!z(x+z=y)\)
+  \item \(S(x)\rightarrow x+0=x\)
+  \item \(S(x)\land S(y)\leftrightarrow S(x\cdot y)\)
+  \item \(S(x)\land S(y)\rightarrow\exists!z(x\cdot z=y)\)
+  \item \(S(x)\rightarrow x\cdot 1=x\)
+  \item \(S(x)\land S(y)\land S(z)\rightarrow x+(y+z)=(x+y)+z\)
+  \item \(S(x)\land S(y)\rightarrow x+y=y+x\)
+  \item \(S(x)\land S(y)\land S(z)\rightarrow x\cdot(y\cdot z)=(x\cdot y)\cdot z\)
+  \item \(S(x)\land S(y)\rightarrow x\cdot y=y\cdot x\)
+  \item \(S(x)\land S(y)\land S(z)\rightarrow x\cdot(y+z)=x\cdot y+x\cdot z\)
+  \item \(S(x)\land S(y)\rightarrow x=y\lor x>y\lor y>x\)
+  \item \(S(x)\land S(y)\rightarrow x=y\rightarrow\lnot x>y\lor\lnot y>x\)
+  \item \(S(x)\land S(y)\rightarrow x>y\rightarrow x\neq y\lor\lnot y>x\)
+  \item \(S(x)\land S(y)\land S(z)\rightarrow(x>y\land y>z\rightarrow x>z)\)
+  \item \(S(x)\land S(y)\land S(z)\rightarrow(x>y\rightarrow x+z>y+z)\)
+  \item \(S(x)\land S(y)\land S(z)\rightarrow(x>y\land z>0\rightarrow x\cdot z>y\cdot z)\)
+  \item\label{260425093801} \(S(y)\rightarrow\{y>0\rightarrow\exists x(S(x)\land x\cdot x=y)\}\)
+  \item\label{260425093802} 「変数 \(x\) に関する任意の \(n\) 次多項式」を \(\varphi_n(x)\) \((n=1,2,\ldots)\) と表すとき、\\
+        \(\exists x(S(x)\land\varphi_{2n-1}(x)=0).\)
+\end{enumerate}
+
+公理に基づいて、負数 \(-x,\) 差 \(x-y,\) 商 \(x/y,\) 自乗 \(x^2,\) 平方根 \(\sqrt{x}\) などがただ一つ存在することが示され、定義可能になる。
+
+公理 \ref{260425093801} は公理ではなく\textbf{公理図式}\index{こうりずしき@公理図式}であり、実際は無数の論理式である。
+しかし、アルゴリズム的に生成あるいは機械的に判別可能なものなので、「有限の立場」に反しない。
+
+ちなみに、公理 \ref{260425093801} と \ref{260425093802} をひとまとめにして\(\exists x(S(x)\land\varphi_n(x)=0)\) であるとすると、スカラーの全体が複素閉体になってしまい、大小関係を一般的に定義することができなくなる。
+
+
+\section{公準}
+
+これは座標ベクトルの公理系である。
+\textbf{点}\index{てん@点}は\textbf{ベクトル}\index{べくとる@ベクトル}であり、ベクトルは点である。
+
+\begin{enumerate}
+  \item \(\lnot S(z)\leftrightarrow\exists xy(S(x)\land S(y)\land V(x,y,z))\)
+  \item\label{260425093804} \(S(x)\land S(y)\leftrightarrow \exists zV(x,y,z)\)
+  \item\label{260425155601} \(V(x,y,z)\land V(x,y,w)\rightarrow z=w\)
+  \item \(V(x,y,z)\land V(u,v,z)\rightarrow x=u\land y=v\)
+  \item\label{260425093803} \(\displaystyle V(x,y,w)\rightarrow z+w=w+z=\left(1+\frac{z}{\sqrt{x^2+y^2}}\right)\cdot w\)
+  \item \(V(x,y,w)\land V(z\cdot x,z\cdot y,u)\rightarrow z\cdot w=w\cdot z=u\)
+  \item \(V(x,y,z)\land V(u,v,w)\land V(x+u,y+v,t)\rightarrow z+w=t\)
+  \item \(V(x,y,z)\land V(u,v,w)\land V(x\cdot u,y\cdot v,t)\rightarrow z\cdot w=t\)
+\end{enumerate}
+
+% 定義 1
+
+\begin{dfn}[\textbf{順序対}\index{じゅんじょつい@順序対}]\label{260419033901}
+  公準 \ref{260425093804} より、任意のスカラー \(x,y\) に対して \(V(x,y,z)\) であるような \(z\) が存在し、公準 \ref{260425155601} より、\(z\) は \(x,y\) に対してただ一つ定まるので、それを
+  \[\langle x,y\rangle\]
+  と書く。
+\end{dfn}
+
+定義 \ref{260419033901} の記法を用いて公準の本質的な部分を書き換えるとこうなる。
+
+\begin{enumerate}
+  \setcounter{enumi}{3}
+  \item \(\langle x,y\rangle=\langle u,v\rangle\rightarrow x=u\land y=v\)
+  \item\label{260425094701} \(\displaystyle z+\langle x,y\rangle=\langle x,y\rangle+z=\left(1+\frac{z}{\sqrt{x^2+y^2}}\right)\cdot\langle x,y\rangle\)
+  \item\label{260425094702} \(z\cdot\langle x,y\rangle=\langle x,y\rangle\cdot z=\langle z\cdot x,z\cdot y\rangle\)
+  \item \(\langle x,y\rangle+\langle u,v\rangle=\langle x+u,y+v\rangle\)
+  \item\label{260425093806} \(\langle x,y\rangle\cdot\langle u,v\rangle=x\cdot u+y\cdot v\)
+\end{enumerate}
+
+結局、公準 \ref{260425094701} 以外は \(\langle x,y\rangle\) がベクトルであることを示している。
+\ref{260425094701} は、スカラーとベクトルの和が未定義になることを避けるための、いわばダミーの公準である。
+\ref{260425094701} はスカラーの分だけベクトルを延長する。
+これは \ref{260425094702} の内容に合わせたものである。
+
+この公理系と諸公準は、\(S(x)\) を「\(x\) は実数である」、\(V(x,y,z)\) を「\(z\) はベクトル \(\langle x,y\rangle\) である」と解釈し、\(+\) を和、\(\cdot\) を積、ただし公準 \ref{260425093806} のそれは内積、と解釈すれば公準 \ref{260425094701} 以外すべて成り立つ。
+\ref{260425094701} については、スカラーを加えることをベクトルの延伸と解すれば成り立つ。
+ゆえに、集合論が無矛盾ならばこの体系も無矛盾である。
+
+公理と公準より、ベクトルの差 \(\langle x,y\rangle-\langle u,v\rangle\) が定義できる。
+
+% 定義 2
+
+\begin{dfn}[\textbf{ノルム}\index{のるむ@ノルム}]
+  \(x\) のノルムを
+  \[||x||=\sqrt{x\cdot x}\]
+  と定義する。
+\end{dfn}
+
+三角形は一直線上にない三点と同一視され、角は三角形のそれに限られる。
+角の大小は、角を挟む一方の辺と対辺のそれぞれを重ね合わせた場合における対辺の長短と同一視される。
+
+
+\section{二次元ユークリッド空間であることの確認}
+
+以下においては、\(S(x)\) を満たすもの、すなわち\textbf{スカラーをギリシャ文字での小文字で表し}、そうでないもの、すなわち\textbf{ベクトルをラテン文字の小文字で表す}。
+ベクトルは点と同一視される。
+
+また、演算子 \(\cdot\) はしばしば省略される。
+
+% 定義 3
+
+\begin{dfn}
+  任意の二点 \(x,y\) に対して、
+  \[y-x\]
+  を
+  \[\overrightarrow{xy}\]
+  と書く。
+\end{dfn}
+
+% 定理 1
+
+\begin{thm}
+  少なくとも一つの点が存在する。
+\end{thm}
+
+\begin{proof}
+  例えば \(\langle0,0\rangle.\)
+\end{proof}
+
+% 定理 2
+
+\begin{thm}
+  任意の点 \(x\) と \(y\) に対して、
+  \[\overrightarrow{xy}\]
+  がただ一つ存在する。
+\end{thm}
+
+\begin{proof}
+  \(-\) の定義（未記載）と公理 3 より明らか。
+\end{proof}
+
+% 定理 3
+
+\begin{thm}
+  任意の点 \(x\) と \(a\) に対して、
+  \[\overrightarrow{xy}=a\]
+  となる点 \(y\) がただ一つ存在する。
+\end{thm}
+
+\begin{proof}
+  \(y-x=a\) より \(y=x+a.\)
+\end{proof}
+
+% 定理 4
+
+\begin{thm}
+  \[\overrightarrow{xy}+\overrightarrow{yz}=\overrightarrow{xz}.\]
+\end{thm}
+
+\begin{proof}
+  \((y-x)+(z-y)=z-x.\)
+\end{proof}
+
+% 定理 5
+
+\begin{thm}
+  少なくとも二つの点が存在し、一方は他方の点とスカラーとの積で表せない。
+\end{thm}
+
+\begin{proof}
+  例えば、\(x=\langle1,0\rangle,\ y=\langle0,1\rangle\) とおくと、\(\lambda\cdot x=\langle\lambda,0\rangle\) であるので常に \(y\neq\lambda x\) である。
+\end{proof}
+
+% 補題 1
+
+\begin{lmm}\label{260422095901}
+  点 \(a,b\) に対して \(a=\nu b\) となるスカラー \(\nu\) が存在しないとき、どのような点 \(x\) に対してもただ一組の数 \(\lambda,\mu\) が存在して、
+  \[x=\lambda a+\mu b.\]
+\end{lmm}
+
+\begin{proof}
+  順序対を用いて表せば、
+  \[\langle\chi_1,\chi_2\rangle=\lambda\langle\alpha_1,\alpha_2\rangle+\mu\langle\beta_1,\beta_2\rangle.\]
+  すなわち
+  \[
+    \left\{ \,
+      \begin{aligned}
+        & \alpha_1\lambda+\beta_1\mu=\chi_1, \\
+        & \alpha_2\lambda+\beta_2\mu=\chi_2.
+      \end{aligned}
+    \right.
+  \]
+  ゆえに
+  \[
+    \lambda=\frac{\beta_2\chi_1-\beta_1\chi_2}{\alpha_1\beta_2-\alpha_2\beta_1},\quad
+    \mu=\frac{\alpha_1\chi_1-\alpha_2\chi_2}{\alpha_1\beta_2-\alpha_2\beta_1}.
+  \]
+  ここで、\(\alpha_1\beta_2-\alpha_2\beta_1=0\) となることはあり得ない。
+  もしそうだとすると、\(\langle\alpha_1,\alpha_2\rangle=\nu\langle\beta_1,\beta_2\rangle\) となる \(\nu\) が存在しないとした前提に反する。
+\end{proof}
+
+% 定理 6
+
+\begin{thm}\label{260424194701}
+  \(\overrightarrow{ab}=\nu\overrightarrow{ac}\) となるスカラー \(\nu\) が存在しないとき、どのような点 \(x\) に対してもただ一組のスカラー \(\lambda,\mu\) が存在して、
+  \[\overrightarrow{ax}=\lambda\overrightarrow{ab}+\mu\overrightarrow{ac}.\]
+\end{thm}
+
+\begin{proof}
+  補題 \ref{260422095901} より直ちに題意が従う。
+\end{proof}
+
+
+\section{角の取扱い}
+
+% 定義 4
+
+\begin{dfn}[\textbf{角の合同}\index{かくのごうどう@角の合同}]
+  任意の点 \(x,y,z\) と \(u,v,w\) に対して、
+  スカラー \(\lambda\geq 0,\ \mu\geq 0\) が存在して
+  \begin{gather*}
+    ||\overrightarrow{yx}||=||\lambda\overrightarrow{vu}||,\quad ||\overrightarrow{yz}||=||\mu\overrightarrow{vw}||, \\
+    ||\overrightarrow{yx}-\overrightarrow{yz}||=||\lambda\overrightarrow{vu}-\mu\overrightarrow{vw}||
+  \end{gather*}
+  となることを、
+  \(\angle xyz\equiv\angle uvw\) と表す。
+\end{dfn}
+
+% 定理 7
+
+\begin{thm}\label{260424155001}
+  \(||\overrightarrow{yx}||=||\overrightarrow{vu}||,\ ||\overrightarrow{yz}||=||\overrightarrow{vw}||\) かつ \(\angle xyz\equiv\angle uvw\) であるとき、
+  任意のスカラー \(\lambda\geq 0,\ \mu\geq 0\) 対して
+  \[||\lambda \overrightarrow{yx}-\mu\overrightarrow{yz}||=||\lambda \overrightarrow{vu}-\mu\overrightarrow{vw}||.\]
+\end{thm}
+
+\begin{proof}
+  条件より、
+  \[||\overrightarrow{yx}-\overrightarrow{yz}||^2=||\overrightarrow{vu}-\overrightarrow{vw}||^2.\]
+  すなわち
+  \[\overrightarrow{yx}\cdot\overrightarrow{yz}=\overrightarrow{vu}\cdot\overrightarrow{vw}.\]
+
+  ゆえに
+  \begin{gather*}
+    ||\lambda\overrightarrow{yx}-\mu\overrightarrow{yz}||^2-||\lambda\overrightarrow{vu}-\mu\overrightarrow{vw}||^2 \\
+    =2\lambda\mu(\overrightarrow{yx}\cdot\overrightarrow{yz})-2\lambda\mu(\overrightarrow{vu}\cdot\overrightarrow{vw})=0.
+  \end{gather*}
+
+  よって、定理の結論が示された。
+\end{proof}
+
+\begin{col*}
+  定理 \ref{260424155001} により、角の合同が同一律・反射律だけでなく推移律も満たすことがわかる。
+\end{col*}
+
+% 定義 5
+
+\begin{dfn}[\textbf{角の大小}\index{かくのだいしょう@角の大小}]
+  任意の点 \(x,y,z\) と \(u,v,w\) に対して、
+  \[\angle xyz\equiv\angle x'y'z',\quad \angle uvw\equiv\angle u'v'w'\]
+  となる点 \(x',y',z'\) と \(u',v',w'\) が存在し（同じでもよい）、
+    スカラー \(\lambda\geq 0,\ \nu>1\) が存在して
+  \begin{gather*}
+    ||\overrightarrow{y'z'}||=||\overrightarrow{v'w'}||, \\
+    \overrightarrow{y'x'}-\overrightarrow{y'z'}=\nu(\lambda\overrightarrow{v'u'}-\overrightarrow{v'w'})
+  \end{gather*}
+  となることを、
+  \[\angle xyz>\angle uvw\]
+  と表す。
+\end{dfn}
+
+\begin{col*}
+  \(\lambda=0\) とすれば、\(180\) 度の角が最大だとわかる。
+  （それより大きい角を扱うには、別種の角として定義する必要がある。）
+\end{col*}
