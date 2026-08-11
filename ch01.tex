@@ -23,6 +23,7 @@
 の省略記法であり、「ただ一つの \(x\) に対して \(P(x)\) である」を意味する。
 また、以下において \(\forall\) は極力省略してある。
 
+\renewcommand{\labelenumi}{\theenumi.}
 \begin{enumerate}
   \item \(S(0)\land S(1)\)
   \item \(S(x)\land S(y)\leftrightarrow S(x+y)\)
@@ -46,8 +47,9 @@
   \item\label{260425093802} 「変数 \(x\) に関する任意の \(n\) 次多項式」を \(\varphi_n(x)\) \((n=1,2,\ldots)\) と表すとき、\\
         \(\exists x(S(x)\land\varphi_{2n-1}(x)=0).\)
 \end{enumerate}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
 
-公理に基づいて、負数 \(-x,\) 差 \(x-y,\) 商 \(x/y,\) 自乗 \(x^2,\) 平方根 \(\sqrt{x}\) などがただ一つ存在することが示され、定義可能になる。
+公理に基づいて、負数 \(-x,\) 差 \(x-y,\) 商 \(x/y,\) 自乗 \(x^2,\) 正の平方根 \(\sqrt{x}\) などがただ一つ存在することが示され、定義可能になる。
 
 公理 \ref{260425093802} は公理ではなく\textbf{公理図式}\index{こうりずしき@公理図式}であり、実際は無数の論理式である。
 しかし、アルゴリズム的に生成あるいは機械的に判別可能なものなので、「有限の立場」に反しない。
