@@ -14,10 +14,7 @@
 
 \section{公理}
 
-これは実質的に\textbf{実閉体}\index{じつへいたい@実閉体}の公理系である。
-実数体の公理系でも構わない。
-実閉体のものにしてあるのは、一階述語論理において理論の完全性が得られるからである。
-
+これは実質的に実数体の公理系を一階述語論理の範囲に制限したものである。
 \(\exists!xP(x)\) は
 \[\exists x\{P(x)\land\forall y(P(y)\rightarrow x=y)\}\]
 の省略記法であり、「ただ一つの \(x\) に対して \(P(x)\) である」を意味する。
@@ -43,20 +40,22 @@
   \item \(S(x)\land S(y)\land S(z)\rightarrow(x>y\land y>z\rightarrow x>z)\)
   \item \(S(x)\land S(y)\land S(z)\rightarrow(x>y\rightarrow x+z>y+z)\)
   \item \(S(x)\land S(y)\land S(z)\rightarrow(x>y\land z>0\rightarrow x\cdot z>y\cdot z)\)
-  \item\label{260425093801} \(S(y)\rightarrow\{y>0\rightarrow\exists x(S(x)\land x\cdot x=y)\}\)
-  \item\label{260425093802} 「変数 \(x\) に関する任意の \(n\) 次多項式」を \(\varphi_n(x)\) \((n=1,2,\ldots)\) と表すとき、\\
-        \(\exists x(S(x)\land\varphi_{2n-1}(x)=0).\)
+  \item\label{261002134501} \(\forall xy\{S(x)\land S(y)\rightarrow(\varphi(x)\land\psi(y)\rightarrow y>x)\} \\
+  \land\exists x(S(x)\land\varphi(x))\land\exists y(S(y)\land\psi(y)) \\
+  \land\forall z(S(z)\rightarrow\varphi(z)\lor\psi(z)) \\
+  \rightarrow\exists x[S(x)\land\varphi(x)\land\forall z\{S(z)\rightarrow(\varphi(z)\rightarrow\lnot z>x)\}] \\
+  \lor\exists y[S(y)\land\psi(y)\land\forall z\{S(z)\rightarrow(\psi(z)\rightarrow\lnot y>z)\}].\) \\
+  ここで、\(\varphi(x)\) は \(x\) を自由変項として含み、\(y\) を自由変項として含まない任意の論理式であり、\(\psi(y)\) も \(x\) と \(y\) を入れ替えて同様。
 \end{enumerate}
 \renewcommand{\labelenumi}{(\arabic{enumi})}
 
-公理に基づいて、負数 \(-x,\) 差 \(x-y,\) 商 \(x/y,\) 自乗 \(x^2,\) 正の平方根 \(\sqrt{x}\) などがただ一つ存在することが示され、定義可能になる。
-
-公理 \ref{260425093802} は公理ではなく\textbf{公理図式}\index{こうりずしき@公理図式}であり、実際は無数の論理式である。
+公理 \ref{261002134501} は公理ではなく\textbf{公理図式}\index{こうりずしき@公理図式}であり、実際は無数の論理式である。
 しかし、アルゴリズム的に生成あるいは機械的に判別可能なものなので、「有限の立場」に反しない。
 
-ちなみに、公理 \ref{260425093801} と \ref{260425093802} をひとまとめにして
-\[\exists x(S(x)\land\varphi_n(x)=0)\]
-であるとすると、スカラーの全体が複素数体になってしまい、大小関係を一般的に定義することができなくなる。
+公理 \ref{261002134501} は大変複雑に見えるが、デデキントの切断公理を一階述語論理の枠内で表現したものに過ぎない。
+有理数の無限集合によるデデキント切断の個数は非可算無限であるが、公理 \ref{261002134501} の個数は可算無限を超えず、したがって、それらの定める切断の個数も可算無限を超えない。
+
+公理に基づいて、負数 \(-x,\) 差 \(x-y,\) 商 \(x/y,\) 自乗 \(x^2,\) 正の平方根 \(\sqrt{x}\) などがただ一つ存在することが示され、定義可能になる。
 
 
 \section{公準}
